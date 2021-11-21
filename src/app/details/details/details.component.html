@@ -1,0 +1,19 @@
+<div>
+   <button mat-button routerLink="/home" routerLinkActive="router-link-active no-border" style="border: 1px solid black;
+   padding: 4px;">Back to Home</button>
+ </div>
+
+ <mat-card class="example-card" *ngIf="myInfo$ | async as myInfo">
+  <mat-card-header>
+    <mat-card-title>{{title || 'no title set'}}</mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <p>
+      {{ myInfo?.name || 'no name set'}}
+    </p>
+  </mat-card-content>
+  <mat-card-actions>
+    <button mat-button>LIKE</button>
+    <button mat-button>SHARE</button>
+  </mat-card-actions>
+</mat-card>

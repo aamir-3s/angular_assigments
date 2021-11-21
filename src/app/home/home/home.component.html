@@ -1,0 +1,17 @@
+
+<form [formGroup]="newTaskForm" autocomplete="off" novalidate (ngSubmit)="onSubmit()" fxLayout="column wrap"
+fxLayoutAlign="center center" fxLayoutGap="10px">
+<mat-card-content>
+
+<mat-form-field>
+<input matInput type="number" placeholder="Enter ID" formControlName="id" id="id">
+<mat-hint align="end">Not more then 10 No long.</mat-hint>
+<mat-error *ngIf="hasError('id', 'required')">ID is required</mat-error>
+<mat-error *ngIf="hasError('id', 'maxlength')">You have more than 10 characters</mat-error>
+</mat-form-field>
+
+<mat-card-actions align="start">
+<button mat-raised-button color="primary" [disabled]="loading">Send</button>
+</mat-card-actions>
+</mat-card-content>
+</form>
